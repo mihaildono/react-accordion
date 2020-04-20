@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AccordionSection from './AccordionSection';
+
 class Accordion extends React.Component {
+  static Section = AccordionSection;
+
   constructor(props) {
     super(props);
 
@@ -54,7 +58,7 @@ class Accordion extends React.Component {
 
     return (
       <div>
-        {React.Children.map(children, (child) =>
+        {children.map((child) =>
           React.cloneElement(child, {
             title: child.props.title,
             onClick: this.onClick,

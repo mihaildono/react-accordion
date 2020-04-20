@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Accordion from './Accordion';
-import AccordionSection from './AccordionSection';
 
 describe('Accordion', () => {
   const title = 'bar';
@@ -10,16 +9,16 @@ describe('Accordion', () => {
   it('with default open and not allowMultipleOpen', () => {
     const wrapper = mount(
       <Accordion>
-        <AccordionSection title={title}>{content}</AccordionSection>
-        <AccordionSection isOpen title={title}>
+        <Accordion.Section title={title}>{content}</Accordion.Section>
+        <Accordion.Section isOpen title={title}>
           {content}
-        </AccordionSection>
-        <AccordionSection isOpen title={title}>
+        </Accordion.Section>
+        <Accordion.Section isOpen title={title}>
           {content}
-        </AccordionSection>
+        </Accordion.Section>
       </Accordion>
     );
-    const accordions = wrapper.find(AccordionSection);
+    const accordions = wrapper.find(Accordion.Section);
 
     expect(accordions.filterWhere((e) => e.props().isOpen === true).length).toBe(1);
 
@@ -34,16 +33,16 @@ describe('Accordion', () => {
     it('with default open and allowMultipleOpen', () => {
       const wrapper = mount(
         <Accordion allowMultipleOpen>
-          <AccordionSection title={title}>{content}</AccordionSection>
-          <AccordionSection isOpen title={title}>
+          <Accordion.Section title={title}>{content}</Accordion.Section>
+          <Accordion.Section isOpen title={title}>
             {content}
-          </AccordionSection>
-          <AccordionSection isOpen title={title}>
+          </Accordion.Section>
+          <Accordion.Section isOpen title={title}>
             {content}
-          </AccordionSection>
+          </Accordion.Section>
         </Accordion>
       );
-      const accordions = wrapper.find(AccordionSection);
+      const accordions = wrapper.find(Accordion.Section);
 
       expect(accordions.filterWhere((e) => e.props().isOpen === true).length).toBe(2);
     });
