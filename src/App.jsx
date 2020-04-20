@@ -6,11 +6,11 @@ import Accordion from './components/Accordion';
 function App() {
   return (
     <div className="app">
-      <Accordion>
+      <Accordion allowMultipleOpen>
         <AccordionSection title="title">
           <div>hello</div>
         </AccordionSection>
-        <AccordionSection title="title2">
+        <AccordionSection isOpen title="title2">
           <div>hello2</div>
         </AccordionSection>
       </Accordion>

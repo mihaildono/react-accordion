@@ -2,24 +2,55 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Accordion extends React.Component {
-  state = {
-    openSections: {},
-  };
+  constructor(props) {
+    super(props);
 
-  onClick = (title) => {
+    const openSections = {};
+    const children = React.Children.toArray(props.children);
+
+    if (props.allowMultipleOpen) {
+      children.forEach((child) => {
+        if (child.props.isOpen) {
+          openSections[child.key] = true;
+        }
+      });
+    } else {
+      children.some((child) => {
+        if (child.props.isOpen) {
+          openSections[child.key] = true;
+          return true;
+        }
+
+        return null;
+      });
+    }
+
+    this.state = { openSections, children };
+  }
+
+  onClick = (id) => {
     const { openSections } = this.state;
-    const isOpen = openSections[title];
+    const { allowMultipleOpen } = this.props;
+    const isOpen = openSections[id];
 
-    this.setState({
-      openSections: {
-        [title]: !isOpen,
-      },
-    });
+    if (allowMultipleOpen) {
+      this.setState({
+        openSections: {
+          ...openSections,
+          [id]: !isOpen,
+        },
+      });
+    } else {
+      this.setState({
+        openSections: {
+          [id]: !isOpen,
+        },
+      });
+    }
   };
 
   render() {
-    const { openSections } = this.state;
-    const { children } = this.props;
+    const { openSections, children } = this.state;
 
     return (
       <div>
@@ -28,7 +59,8 @@ class Accordion extends React.Component {
             title: child.props.title,
             onClick: this.onClick,
             children: child.props.children,
-            isOpen: !!openSections[child.props.title],
+            isOpen: !!openSections[child.key],
+            id: child.key,
           })
         )}
       </div>
@@ -38,6 +70,11 @@ class Accordion extends React.Component {
 
 Accordion.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]).isRequired,
+  allowMultipleOpen: PropTypes.bool,
+};
+
+Accordion.defaultProps = {
+  allowMultipleOpen: false,
 };
 
 export default Accordion;

@@ -5,11 +5,11 @@ import './AccordionSection.scss';
 
 class AccordionSection extends React.PureComponent {
   render() {
-    const { isOpen, title, children, onClick } = this.props;
+    const { isOpen, title, children, onClick, id } = this.props;
 
     return (
       <div className="section">
-        <div onClick={() => onClick(title)} className={`section__header ${isOpen && 'section--active'}`}>
+        <div onClick={() => onClick(id)} className={`section__header ${isOpen && 'section--active'}`}>
           <span id="section-title">{title}</span>
           {isOpen ? (
             <i className="fa fa-caret-down section__caret" />
@@ -25,12 +25,14 @@ class AccordionSection extends React.PureComponent {
 
 AccordionSection.propTypes = {
   isOpen: PropTypes.bool,
+  id: PropTypes.string,
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.element]).isRequired,
 };
 
 AccordionSection.defaultProps = {
+  id: '',
   isOpen: false,
   onClick: () => {},
 };
