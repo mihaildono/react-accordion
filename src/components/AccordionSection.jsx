@@ -26,12 +26,13 @@ class AccordionSection extends React.PureComponent {
 AccordionSection.propTypes = {
   isOpen: PropTypes.bool,
   title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.element]).isRequired,
 };
 
 AccordionSection.defaultProps = {
   isOpen: false,
+  onClick: () => {},
 };
 
 export default AccordionSection;
