@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './AccordionSection.scss';
+import './Accordion.scss';
 
 const AccordionSection = ({ isOpen, title, onClick, id, children }) => (
   <div className="section">
-    <div onClick={() => onClick(id)} className={`section__header ${isOpen && 'section--active'}`}>
+    <div onClick={() => onClick(id)} className="section__header">
+      <div className={`section__icon ${isOpen && 'section--rotate'}`}>▸</div>
       <span id="section-title">{title}</span>
-      {isOpen ? <i className="fa fa-caret-down section__caret" /> : <i className="fa fa-caret-right section__caret" />}
     </div>
     {isOpen && <div className="section__content">{children}</div>}
   </div>
