@@ -5,7 +5,7 @@ Demo](https://cdn.fbsbx.com/v/t59.2708-21/94098264_539164163461647_6846296569835
 
 # Demo
 
-[Try demo](https://master.d26of7f6w4ftzf.amplifyapp.com/)
+[Try demo](https://master.d26of7f6w4ftzf.amplifyapp.com/) or
 [Visit demo repo](https://www.npmjs.com/package/@mihailgeorgiev94/react-accordion)
 
 
