@@ -1,7 +1,7 @@
 {
-  "name": "react-accordion",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@mihailgeorgiev94/react-accordion",
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -23,6 +23,24 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "keywords": [
+    "react",
+    "accordion",
+    "collapse",
+    "section"
+  ],
+  "contributors": [
+    {
+      "name": "Mihail Georgiev",
+      "url": "https://github.com/mihailgeorgiev94"
+    },
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mihailgeorgiev94/react-accordion",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihailgeorgiev94/react-accordion.git"
   },
   "browserslist": {
     "production": [
