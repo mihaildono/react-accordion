@@ -1,6 +1,6 @@
 {
   "name": "@mihailgeorgiev94/react-accordion",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "private": false,
   "main": "lib/bundle.js",
   "description": "Accordion component for React",
@@ -17,7 +17,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "webbuild": "webpack --mode production",
+    "prepublish": "webpack --mode production",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
