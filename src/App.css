@@ -4,8 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .accordion-container {
   width: 200px;
+  margin-top: 5px;
+}
+
+.section__header.section--open {
+  background: #8743ff;
+  color: white;
 }

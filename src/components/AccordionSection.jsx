@@ -5,7 +5,7 @@ import './Accordion.scss';
 
 const AccordionSection = ({ isOpen, title, onClick, id, children }) => (
   <div className="section">
-    <div onClick={() => onClick(id)} className="section__header">
+    <div onClick={() => onClick(id)} className={`section__header ${isOpen && 'section--open'}`}>
       <div className={`section__icon ${isOpen && 'section--rotate'}`}>▸</div>
       <span id="section-title">{title}</span>
     </div>
