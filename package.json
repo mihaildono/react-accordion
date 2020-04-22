@@ -1,7 +1,9 @@
 {
   "name": "@mihailgeorgiev94/react-accordion",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "private": false,
+  "main": "lib/bundle.js",
+  "description": "Accordion component for React",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -15,26 +17,37 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "webbuild": "webpack --mode production",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . src/**/*.{js,jsx}"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@researchgate/babel-plugin-transform-scss-import-to-string"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "contributors": [
+    {
+      "name": "Mihail Georgiev",
+      "url": "https://github.com/vincentaudebert"
+    }
+  ],
   "keywords": [
     "react",
     "accordion",
     "collapse",
     "section"
-  ],
-  "contributors": [
-    {
-      "name": "Mihail Georgiev",
-      "url": "https://github.com/mihailgeorgiev94"
-    },
   ],
   "license": "MIT",
   "homepage": "https://github.com/mihailgeorgiev94/react-accordion",
@@ -55,6 +68,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@researchgate/babel-plugin-transform-scss-import-to-string": "^1.0.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
@@ -64,6 +84,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "prettier": "2.0.4"
+    "prettier": "2.0.4",
+    "webpack-cli": "^3.3.11"
   }
 }
