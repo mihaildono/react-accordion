@@ -1,6 +1,6 @@
 {
   "name": "@mihailgeorgiev94/react-accordion",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "private": false,
   "main": "lib/bundle.js",
   "description": "Accordion component for React",
@@ -40,7 +40,7 @@
   "contributors": [
     {
       "name": "Mihail Georgiev",
-      "url": "https://github.com/vincentaudebert"
+      "url": "https://github.com/mihailgeorgiev94"
     }
   ],
   "keywords": [
